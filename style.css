@@ -1,0 +1,128 @@
+/* ===== TechAdmit Engineering Portal — style.css ===== */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal:      #0F6E56;
+  --teal-mid:  #1D9E75;
+  --teal-light:#E1F5EE;
+  --amber:     #BA7517;
+  --amber-lt:  #FAEEDA;
+  --coral:     #993C1D;
+  --coral-lt:  #FAECE7;
+  --ink:       #1a1a18;
+  --muted:     #5F5E5A;
+  --faint:     #F1EFE8;
+  --line:      rgba(0,0,0,0.1);
+  --white:     #ffffff;
+  --danger:    #c0392b;
+  --success:   #1D9E75;
+}
+
+body { font-family: 'DM Sans', sans-serif; background: var(--faint); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---- NAVBAR ---- */
+.navbar { background: var(--ink); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1100px; margin: auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: #fff; text-decoration: none; }
+.logo span { color: #5DCAA5; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { color: #ccc; text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.btn-nav { background: var(--teal-mid) !important; color: #fff !important; padding: 7px 16px; border-radius: 8px; font-weight: 500 !important; }
+.btn-nav:hover { background: var(--teal) !important; }
+
+/* ---- HERO ---- */
+.hero { background: var(--ink); color: #fff; padding: 5rem 1.5rem 4rem; text-align: center; }
+.hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+.hero h1 span { color: #5DCAA5; }
+.hero p { font-size: 1.1rem; color: #aaa; max-width: 550px; margin: 0 auto 2rem; line-height: 1.7; }
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ---- BUTTONS ---- */
+.btn { display: inline-block; padding: 11px 26px; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; border: none; transition: all 0.2s; }
+.btn-primary  { background: var(--teal-mid); color: #fff; }
+.btn-primary:hover  { background: var(--teal); transform: translateY(-1px); }
+.btn-outline  { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; }
+.btn-outline:hover  { background: rgba(255,255,255,0.08); }
+.btn-dark     { background: var(--ink); color: #fff; }
+.btn-danger   { background: var(--danger); color: #fff; }
+.btn-sm       { padding: 6px 14px; font-size: 12px; }
+
+/* ---- CONTAINER ---- */
+.container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; flex: 1; }
+.container-sm { max-width: 560px; margin: 0 auto; padding: 2.5rem 1.5rem; flex: 1; }
+
+/* ---- CARDS ---- */
+.card { background: var(--white); border: 0.5px solid var(--line); border-radius: 14px; padding: 1.5rem; }
+.card-sm { background: var(--white); border: 0.5px solid var(--line); border-radius: 12px; padding: 1.1rem 1.25rem; }
+
+/* ---- COURSE GRID ---- */
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; margin-top: 1.5rem; }
+.course-card { background: var(--white); border: 0.5px solid var(--line); border-radius: 14px; padding: 1.25rem; transition: all 0.2s; }
+.course-card:hover { border-color: var(--teal-mid); box-shadow: 0 4px 20px rgba(15,110,86,0.1); transform: translateY(-2px); }
+.course-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.course-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; margin-bottom: 6px; }
+.course-card p  { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+.course-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); border-top: 0.5px solid var(--line); padding-top: 10px; margin-top: 10px; }
+.course-meta span { font-weight: 500; color: var(--teal); }
+
+/* ---- FORMS ---- */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.4px; }
+.form-group input,
+.form-group select,
+.form-group textarea { width: 100%; background: var(--white); border: 0.5px solid rgba(0,0,0,0.18); border-radius: 8px; padding: 10px 13px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); transition: border-color 0.2s; }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { outline: none; border-color: var(--teal-mid); box-shadow: 0 0 0 3px rgba(29,158,117,0.12); }
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-full   { grid-column: 1 / -1; }
+
+/* ---- ALERTS ---- */
+.alert { padding: 12px 16px; border-radius: 9px; font-size: 13px; margin-bottom: 1rem; font-weight: 500; }
+.alert-error   { background: #fdecea; color: var(--danger); border-left: 3px solid var(--danger); }
+.alert-success { background: var(--teal-light); color: var(--teal); border-left: 3px solid var(--teal-mid); }
+.alert-info    { background: var(--amber-lt, #FAEEDA); color: var(--amber); border-left: 3px solid var(--amber); }
+
+/* ---- TABLE ---- */
+.table-wrap { overflow-x: auto; border-radius: 12px; border: 0.5px solid var(--line); }
+table { width: 100%; border-collapse: collapse; background: var(--white); }
+thead tr { background: var(--faint); }
+th, td { padding: 12px 16px; text-align: left; font-size: 13px; border-bottom: 0.5px solid var(--line); }
+th { font-weight: 500; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--faint); }
+
+/* ---- STATUS BADGES ---- */
+.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+.badge-pending  { background: var(--amber-lt, #FAEEDA); color: var(--amber); }
+.badge-accepted { background: var(--teal-light); color: var(--teal); }
+.badge-rejected { background: #fdecea; color: var(--danger); }
+.badge-review   { background: #E6F1FB; color: #185FA5; }
+
+/* ---- STATS ROW (admin) ---- */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 2rem; }
+.stat-card { background: var(--white); border: 0.5px solid var(--line); border-radius: 12px; padding: 1.1rem; }
+.stat-card .num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--ink); }
+.stat-card .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ---- PAGE TITLE ---- */
+.page-title { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; margin-bottom: 4px; }
+.page-sub   { font-size: 14px; color: var(--muted); margin-bottom: 1.5rem; }
+
+/* ---- STEPS (apply page) ---- */
+.steps-bar { display: flex; background: var(--white); border-radius: 12px; border: 0.5px solid var(--line); overflow: hidden; margin-bottom: 1.5rem; }
+.step-tab { flex: 1; padding: 0.8rem 0.4rem; text-align: center; font-size: 12px; font-weight: 500; color: var(--muted); border-right: 0.5px solid var(--line); }
+.step-tab:last-child { border-right: none; }
+.step-tab .snum { display: block; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; }
+.step-tab.active { background: var(--ink); color: #fff; }
+.step-tab.active .snum { color: #5DCAA5; }
+.step-tab.done { background: var(--teal-light); color: var(--teal); }
+.step-tab.done .snum { color: var(--teal-mid); }
+
+/* ---- FOOTER ---- */
+.footer { background: var(--ink); color: #888; padding: 1.5rem; margin-top: auto; }
+.footer-inner { max-width: 1100px; margin: auto; text-align: center; }
